@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PawHaven</title>
+  <meta name="description" content="PawHaven is a pet adoption shelter management system: track animals, adopters and adoption applications.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#view">Skip to content</a>
+
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon" aria-hidden="true">🐾</span> PawHaven</div>
+    <nav class="tabs" aria-label="Main">
+      <a href="#dashboard" data-route="dashboard">Dashboard</a>
+      <a href="#animals" data-route="animals">Animals</a>
+      <a href="#adopters" data-route="adopters">Adopters</a>
+      <a href="#applications" data-route="applications">Applications</a>
+    </nav>
+    <div class="top-actions">
+      <button class="btn ghost" id="btnExport" type="button">Export data</button>
+      <button class="btn ghost" id="btnReset" type="button">Reset demo</button>
+    </div>
+  </header>
+
+  <main id="view" class="view" tabindex="-1"></main>
+
+  <dialog id="formDlg" aria-labelledby="formTitle">
+    <form id="form" novalidate>
+      <h2 id="formTitle"></h2>
+      <div id="formBody"></div>
+      <div class="dlg-actions">
+        <button class="btn ghost" type="button" id="formCancel">Cancel</button>
+        <button class="btn primary" type="submit" id="formSubmit">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="confirmDlg" aria-labelledby="confirmTitle">
+    <form method="dialog">
+      <h2 id="confirmTitle">Are you sure?</h2>
+      <p id="confirmText"></p>
+      <div class="dlg-actions">
+        <button class="btn ghost" value="cancel">Cancel</button>
+        <button class="btn danger" value="ok" id="confirmOk">Confirm</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
